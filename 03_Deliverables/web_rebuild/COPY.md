@@ -20,7 +20,7 @@ Final approved copy. If a section is missing, flag it in chat. Do not invent cop
 
 - Eyebrow: `/ OPERATIONS PARTNER`
 - Headline (two lines, italic display serif on line 2): `Stop working in your business. *Start scaling it.*`
-- Sub: `We engineer the systems, automations and infrastructure that turn day-to-day chaos into predictable revenue. Built for service businesses ready to grow without the burnout.`
+- Sub: `We engineer the systems and automations that turn day-to-day chaos into predictable revenue.` (shortened 2026-05-25 at client request to lighten the hero; original: "We engineer the systems, automations and infrastructure that turn day-to-day chaos into predictable revenue. Built for service businesses ready to grow without the burnout." The dropped qualifier is covered by the Filter section.)
 - Primary CTA: `Book a strategy call`
 - Secondary link: `See how it works ↓`
 - Scroll cue: `SCROLL`

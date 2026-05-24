@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function FinalCta() {
   return (
-    <section className="flex min-h-[100svh] items-center bg-ink py-section-y text-bone">
+    <section className="flex min-h-[70svh] items-center bg-ink py-section-y text-bone lg:min-h-[100svh]">
       <Container className="flex flex-col items-center text-center">
         <Reveal>
           <p className="mx-auto max-w-[16ch] font-display text-display italic leading-[1.05] text-bone">

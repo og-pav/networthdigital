@@ -14,6 +14,7 @@ type BaseProps = {
   variant?: Variant;
   size?: Size;
   magnetic?: boolean;
+  block?: boolean;
   className?: string;
   href?: string;
   onClick?: () => void;
@@ -45,6 +46,7 @@ export function Button({
   variant = "primary",
   size = "md",
   magnetic = true,
+  block = false,
   className,
   href,
   onClick,
@@ -75,7 +77,13 @@ export function Button({
     y.set(0);
   };
 
-  const classes = cn(base, variants[variant], variant !== "ghost" && sizes[size], className);
+  const classes = cn(
+    base,
+    variants[variant],
+    variant !== "ghost" && sizes[size],
+    block && "w-full",
+    className,
+  );
   const isInternal = href?.startsWith("/") || href?.startsWith("#");
 
   const inner = href ? (
@@ -107,7 +115,7 @@ export function Button({
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={enableMagnet ? { x: sx, y: sy } : undefined}
-      className="inline-flex"
+      className={cn(block ? "flex w-full" : "inline-flex")}
     >
       {inner}
     </motion.div>

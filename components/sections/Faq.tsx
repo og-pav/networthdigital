@@ -17,7 +17,7 @@ export function Faq() {
       <Container>
         <SectionHeader eyebrow={faq.eyebrow} heading={faq.headline} />
 
-        <ul className="mt-14 border-t border-ink/12">
+        <ul className="mt-10 border-t border-ink/12 md:mt-14">
           {faq.items.map((item, i) => {
             const isOpen = open === i;
             const panelId = `${baseId}-panel-${i}`;
@@ -31,12 +31,12 @@ export function Faq() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 py-7 text-left"
+                    className="group flex w-full items-center justify-between gap-6 py-7 text-left"
                   >
                     <span className="text-h3 font-display text-ink">{item.q}</span>
                     <span
                       className={cn(
-                        "shrink-0 text-accent transition-transform duration-[220ms] ease-snap",
+                        "-m-1.5 shrink-0 rounded-full p-1.5 text-accent transition-[transform,background-color] duration-[220ms] ease-snap group-hover:bg-accent/10",
                         isOpen && "rotate-45",
                       )}
                       aria-hidden
@@ -58,7 +58,7 @@ export function Faq() {
                       transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="max-w-3xl pb-8 text-body text-ink-soft">
+                      <p className="max-w-[65ch] pb-8 text-body text-ink-soft">
                         {item.a}
                       </p>
                     </motion.div>

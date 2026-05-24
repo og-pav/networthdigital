@@ -19,11 +19,16 @@ export function Nav() {
   const overDarkHero = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    // Over the dark hero, stay transparent until the content arrives under the
+    // nav, then switch to the solid bar. Elsewhere, solidify almost immediately.
+    const onScroll = () => {
+      const threshold = overDarkHero ? window.innerHeight * 0.9 : 12;
+      setScrolled(window.scrollY > threshold);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [overDarkHero]);
 
   // Lock body scroll while the mobile menu is open.
   useEffect(() => {
@@ -41,7 +46,7 @@ export function Nav() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300 ease-out",
         solid
-          ? "border-b border-ink/10 bg-bone/80 backdrop-blur-md"
+          ? "border-b border-ink/10 bg-bone/90 shadow-sm backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -127,7 +132,7 @@ export function Nav() {
                   variant="primary"
                   size="lg"
                   magnetic={false}
-                  className="w-full"
+                  block
                   onClick={() => setOpen(false)}
                 >
                   {nav.cta.label}

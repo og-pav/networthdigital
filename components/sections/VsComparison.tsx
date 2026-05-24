@@ -52,7 +52,7 @@ export function VsComparison() {
 
   return (
     <section ref={root} className="bg-bone">
-      <div className="vs-pin flex min-h-[100svh] items-center py-section-y">
+      <div className="vs-pin flex items-center py-section-y lg:min-h-[100svh]">
         <Container>
           <div className="flex flex-col items-center gap-5 text-center">
             <Eyebrow>{vs.eyebrow}</Eyebrow>
@@ -60,16 +60,16 @@ export function VsComparison() {
             <SectionLead className="mx-auto">{vs.sub}</SectionLead>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-ink/10 bg-ink/10 lg:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-ink/10 bg-ink/10 md:mt-14 lg:grid-cols-2">
             {/* TODAY */}
-            <div className="vs-left bg-bone-warm p-8 md:p-12">
+            <div className="vs-left bg-bone-warm p-6 md:p-12">
               <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-ink-muted">
                 {vs.left.label}
               </p>
               <h3 className="mt-4 text-h3 font-display text-ink">
                 {vs.left.heading}
               </h3>
-              <ul className="mt-8 flex flex-col gap-4">
+              <ul className="mt-6 flex flex-col gap-3 md:mt-8 md:gap-4">
                 {vs.left.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-body text-ink-soft">
                     <Minus
@@ -85,14 +85,14 @@ export function VsComparison() {
             </div>
 
             {/* AFTER */}
-            <div className="bg-ink p-8 text-bone md:p-12">
+            <div className="bg-ink p-6 text-bone md:p-12">
               <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
                 {vs.right.label}
               </p>
               <h3 className="mt-4 text-h3 font-display text-bone">
                 {vs.right.heading}
               </h3>
-              <ul className="mt-8 flex flex-col gap-4">
+              <ul className="mt-6 flex flex-col gap-3 md:mt-8 md:gap-4">
                 {vs.right.bullets.map((b) => (
                   <li
                     key={b}

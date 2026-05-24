@@ -15,7 +15,7 @@ export function Filter() {
           </SectionHeading>
         </div>
 
-        <ul className="mt-14 flex flex-col">
+        <ul className="mt-10 flex flex-col md:mt-14">
           {filter.items.map((item, i) => (
             <Reveal as="li" key={item} delay={i * 0.06}>
               <span className="group relative inline-block py-3">

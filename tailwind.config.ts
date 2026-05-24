@@ -19,7 +19,7 @@ const config: Config = {
         ink: {
           DEFAULT: "#0F0E0C",
           soft: "#3A3733",
-          muted: "#8A857D",
+          muted: "#6E6A62",
         },
         bone: {
           DEFAULT: "#F4EFE6",

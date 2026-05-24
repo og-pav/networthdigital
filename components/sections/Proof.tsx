@@ -13,7 +13,7 @@ export function Proof() {
           lead={proof.sub}
         />
 
-        <Reveal className="mt-16">
+        <Reveal className="mt-10 md:mt-16">
           <article className="grid grid-cols-1 overflow-hidden rounded-lg border border-ink/10 bg-bone-warm shadow-sm lg:grid-cols-2">
             {/* Visual (placeholder texture until real screenshots) */}
             <div className="relative aspect-[16/9] bg-ink lg:aspect-auto">
@@ -49,7 +49,7 @@ export function Proof() {
         </Reveal>
 
         {/* Logo strip */}
-        <Reveal className="mt-16" delay={0.1}>
+        <Reveal className="mt-10 md:mt-16" delay={0.1}>
           <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-ink-muted">
             {proof.logosLabel}
           </p>

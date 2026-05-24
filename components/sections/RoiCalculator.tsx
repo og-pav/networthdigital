@@ -31,7 +31,7 @@ export function RoiCalculator() {
           lead={roi.sub}
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-8 rounded-lg border border-ink/10 bg-bone-warm p-7 shadow-sm md:p-10 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-10 grid grid-cols-1 gap-8 rounded-lg border border-ink/10 bg-bone-warm p-6 shadow-sm sm:p-7 md:mt-14 md:p-10 lg:grid-cols-2 lg:gap-16">
           {/* Inputs */}
           <div className="flex flex-col justify-center gap-9">
             <Slider
@@ -65,7 +65,7 @@ export function RoiCalculator() {
 
           {/* Output */}
           <div className="flex flex-col justify-center gap-6 border-t border-ink/10 pt-8 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 min-[420px]:grid-cols-2">
               <div>
                 <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-ink-muted">
                   {roi.labels.current}
@@ -73,7 +73,7 @@ export function RoiCalculator() {
                 <p className="mt-2 text-caption text-ink-muted">
                   {roi.labels.monthly}
                 </p>
-                <p className="mt-1 text-h3 font-display tabular-nums text-ink-soft">
+                <p className="mt-1 font-mono text-h3 tracking-[-0.02em] tabular-nums text-ink-soft">
                   <AnimatedNumber value={current} format={fmtAud} />
                 </p>
               </div>
@@ -84,7 +84,7 @@ export function RoiCalculator() {
                 <p className="mt-2 text-caption text-ink-muted">
                   {roi.labels.monthly}
                 </p>
-                <p className="mt-1 text-h2 font-display tabular-nums text-ink">
+                <p className="mt-1 font-mono text-h2 font-medium tracking-[-0.03em] tabular-nums text-ink">
                   <AnimatedNumber value={improved} format={fmtAud} />
                 </p>
               </div>
@@ -104,7 +104,13 @@ export function RoiCalculator() {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <Button href={roi.cta.href} variant="primary" size="lg">
+          <Button
+            href={roi.cta.href}
+            variant="primary"
+            size="lg"
+            block
+            className="mx-auto h-auto min-h-14 max-w-xl whitespace-normal py-3 text-center leading-snug"
+          >
             {roi.cta.label}
           </Button>
         </div>

@@ -23,7 +23,7 @@ export function Services() {
               aria-label={`${service.title} — book a strategy call`}
               className="group relative block border-b border-ink/12 bg-bone transition-colors duration-300 ease-out hover:bg-ink"
             >
-              <div className="mx-auto flex min-h-[280px] max-w-content flex-col justify-center px-section-x py-12">
+              <div className="mx-auto flex min-h-[200px] max-w-content flex-col justify-center px-section-x py-9 md:min-h-[280px] md:py-12">
                 <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
                   {service.label}
                 </p>
@@ -39,7 +39,7 @@ export function Services() {
                 {/* Detail: expands on hover (desktop), always open on mobile */}
                 <div className="grid grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
-                    <div className="max-w-3xl pt-6">
+                    <div className="max-w-[68ch] pt-6">
                       <p className="text-body text-ink-soft transition-colors duration-300 group-hover:text-bone/70">
                         {service.body}
                       </p>

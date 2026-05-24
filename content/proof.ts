@@ -2,7 +2,7 @@ export const proof = {
   eyebrow: "/ THE RECEIPTS",
   headline: "Real systems. Real outcomes.",
   sub: "Snapshots from inside the operators we have built for.",
-  // TODO: real data — replace placeholder before launch.
+  // TODO: real data. Replace placeholder before launch.
   caseStudy: {
     client: "[CLIENT NAME]",
     result: "[+X% lift in booked calls / -X hours per week saved]",
@@ -12,6 +12,6 @@ export const proof = {
     isPlaceholder: true,
   },
   logosLabel: "/ OPERATORS WE HAVE BUILT FOR",
-  // TODO: real client logos — placeholder wordmarks for now.
+  // TODO: real client logos. Placeholder wordmarks for now.
   logos: ["Detail Co.", "Northside Trades", "Apex Gym", "Meridian Consulting", "Forge Agency"],
 };

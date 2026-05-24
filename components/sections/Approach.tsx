@@ -49,7 +49,7 @@ export function Approach() {
 
   return (
     <section id="approach" ref={root} className="bg-bone">
-      <div className="approach-pin flex min-h-[100svh] items-center py-section-y">
+      <div className="approach-pin flex items-center py-section-y lg:min-h-[100svh]">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             {/* Left: sticky headline */}
