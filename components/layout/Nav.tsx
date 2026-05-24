@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -9,8 +10,13 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
 export function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Only the homepage has a dark hero behind the nav. Elsewhere (e.g. /book)
+  // the background is light, so the nav must be solid with dark text at the top.
+  const overDarkHero = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -27,13 +33,14 @@ export function Nav() {
     };
   }, [open]);
 
-  const onLight = scrolled || open;
+  const solid = scrolled || !overDarkHero || open;
+  const onLight = solid;
 
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300 ease-out",
-        scrolled
+        solid
           ? "border-b border-ink/10 bg-bone/80 backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
       )}

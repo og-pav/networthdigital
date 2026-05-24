@@ -124,6 +124,36 @@
     overflow: hidden;
     vertical-align: top;
   }
+
+  /* ROI calculator range thumb */
+  .roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 22px;
+    width: 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    border: 3px solid var(--bone-warm);
+    box-shadow: 0 2px 8px -2px rgba(15, 14, 12, 0.25);
+    cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-snap);
+  }
+  .roi-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.12);
+  }
+  .roi-slider::-moz-range-thumb {
+    height: 22px;
+    width: 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    border: 3px solid var(--bone-warm);
+    box-shadow: 0 2px 8px -2px rgba(15, 14, 12, 0.25);
+    cursor: pointer;
+  }
+  .roi-slider:focus-visible::-webkit-slider-thumb {
+    outline: 1.5px solid var(--accent-deep);
+    outline-offset: 2px;
+  }
 }
 
 /* Reduced motion: kill non-essential movement, keep everything legible */

@@ -22,6 +22,11 @@ export function LenisProvider({ children }: { children: ReactNode }) {
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    // Dev-only: expose for visual QA tooling. Tree-shaken out of production.
+    if (process.env.NODE_ENV !== "production") {
+      (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+    }
+
     const raf = (time: number) => {
       lenis.raf(time * 1000);
     };
