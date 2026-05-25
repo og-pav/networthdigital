@@ -1,0 +1,86 @@
+<!-- ============================================================
+     NetWorth Digital - GoHighLevel booking calendar
+     Responsive embed. Paste as a single block into a plain HTML
+     page, a WordPress Custom HTML block, or a page-builder embed.
+     CSS is scoped to .nwd-cal so it won't affect the rest of the page.
+     ============================================================ -->
+<div class="nwd-cal">
+  <!-- Loader sits over the iframe and hides itself once the calendar loads -->
+  <div class="nwd-cal__loader" aria-hidden="true">
+    <span class="nwd-cal__spinner"></span>
+    <span>Loading calendar</span>
+  </div>
+
+  <iframe
+    class="nwd-cal__frame"
+    src="https://api.leadconnectorhq.com/widget/booking/CE8nFuU4ruhNoLYJYjJx"
+    title="NetWorth Digital booking calendar"
+    id="ghl-booking-calendar"
+    width="100%"
+    scrolling="no"
+    onload="var l=this.parentNode.querySelector('.nwd-cal__loader'); if(l){l.style.display='none';}">
+  </iframe>
+</div>
+
+<!-- GoHighLevel auto-resize script. The calendar iframe posts its true content
+     height to the parent window via postMessage; this script listens for those
+     messages and sets the iframe height to match, step by step. It is the proper
+     fix for the variable-height problem. Load it once per page. -->
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+
+<style>
+  /* All rules scoped to .nwd-cal - no bare-tag styling, so nothing leaks. */
+  .nwd-cal {
+    width: 100%;
+    max-width: 800px;     /* TWEAK: cap width on large monitors */
+    margin-inline: auto;  /* centers the calendar horizontally */
+    position: relative;   /* anchors the loader overlay */
+  }
+
+  .nwd-cal__frame {
+    width: 100%;
+    display: block;
+    border: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    /* Fallback height shown before (or if) the resize script runs.
+       GHL calendars are TALLEST on mobile (time slots stack), shorter on
+       desktop. TWEAK these three values if the calendar clips at the bottom
+       or shows an inner scrollbar: */
+    min-height: 920px;            /* mobile */
+  }
+  @media (min-width: 768px) {
+    .nwd-cal__frame { min-height: 760px; }   /* tablet */
+  }
+  @media (min-width: 1024px) {
+    .nwd-cal__frame { min-height: 720px; }   /* desktop */
+  }
+
+  .nwd-cal__loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    pointer-events: none;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5c5c5f;
+  }
+  .nwd-cal__spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #d6d7d4;   /* track */
+    border-top-color: #223870;   /* NetWorth navy - change to your brand colour */
+    border-radius: 50%;
+    animation: nwd-cal-spin 0.8s linear infinite;
+  }
+  @keyframes nwd-cal-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .nwd-cal__spinner { animation: none; }
+  }
+</style>

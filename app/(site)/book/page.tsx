@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { site } from "@/lib/site";
+import { BookingEmbed } from "@/components/sections/BookingEmbed";
 
 export const metadata: Metadata = {
   title: "Book a strategy call",
@@ -38,24 +39,7 @@ export default function BookPage() {
       </div>
 
       <div className="mx-auto w-full max-w-content flex-1 px-section-x pb-section-y">
-        <div className="overflow-hidden rounded-lg border border-ink/10 bg-bone-warm shadow-sm">
-          <iframe
-            src={site.bookingUrl}
-            title="NetWorth Digital booking calendar"
-            className="h-[820px] w-full"
-            loading="lazy"
-            style={{ border: "none" }}
-          />
-        </div>
-        <noscript>
-          <p className="mt-6 text-body text-ink-soft">
-            The booking calendar needs JavaScript. You can also call us on{" "}
-            <a href={site.phoneHref} className="underline">
-              {site.phone}
-            </a>
-            .
-          </p>
-        </noscript>
+        <BookingEmbed />
       </div>
     </div>
   );

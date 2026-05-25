@@ -22,5 +22,5 @@ export const site = {
   locale: "en_AU",
   bookingUrl:
     process.env.NEXT_PUBLIC_GHL_BOOKING_URL ??
-    "https://link.jmdigital360.com/widget/booking/FqXWOENX9f3c5jJteFOx",
+    "https://api.leadconnectorhq.com/widget/booking/CE8nFuU4ruhNoLYJYjJx",
 } as const;
