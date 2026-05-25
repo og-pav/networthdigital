@@ -78,13 +78,13 @@ export function RoiCalculator() {
                 </p>
               </div>
               <div>
-                <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
+                <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-navy">
                   {roi.labels.improved}
                 </p>
                 <p className="mt-2 text-caption text-ink-muted">
                   {roi.labels.monthly}
                 </p>
-                <p className="mt-1 font-mono text-h2 font-medium tracking-[-0.03em] tabular-nums text-ink">
+                <p className="mt-1 font-mono text-h2 font-medium tracking-[-0.03em] tabular-nums text-navy">
                   <AnimatedNumber value={improved} format={fmtAud} />
                 </p>
               </div>
@@ -99,7 +99,7 @@ export function RoiCalculator() {
           </div>
         </div>
 
-        <p className="mt-10 text-center font-display text-h2 italic text-ink">
+        <p className="mt-10 text-center font-display text-h2 font-light text-ink">
           {roi.closer}
         </p>
 

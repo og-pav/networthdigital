@@ -13,7 +13,9 @@ export function Eyebrow({
   return (
     <Tag
       className={cn(
-        "font-mono text-eyebrow uppercase text-accent",
+        // Navy by default (passes AA on cream). On dark sections pass a
+        // text-accent (gold) override via className.
+        "font-mono text-eyebrow uppercase text-navy",
         className,
       )}
     >

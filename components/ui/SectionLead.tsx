@@ -9,7 +9,7 @@ export function SectionLead({
   className?: string;
 }) {
   return (
-    <p className={cn("text-lead text-ink-soft max-w-2xl", className)}>
+    <p className={cn("text-lead font-light text-ink-soft max-w-2xl", className)}>
       {children}
     </p>
   );

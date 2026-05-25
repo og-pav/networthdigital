@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-content px-section-x py-16 md:py-24">
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-display text-h2">{footer.logo}</p>
+            <p className="font-display text-h2 font-bold">{footer.logo}</p>
             <p className="mt-3 font-mono text-eyebrow uppercase tracking-[0.12em] text-bone/50">
               {footer.tagline}
             </p>
@@ -17,7 +17,7 @@ export function Footer() {
           <div className="flex flex-col gap-6 md:items-end">
             <a
               href={site.phoneHref}
-              className="text-h3 font-display text-bone transition-colors hover:text-accent"
+              className="text-h3 font-display font-bold text-bone transition-colors hover:text-accent"
             >
               {site.phone}
             </a>

@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { nav } from "@/content/nav";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import { asset } from "@/lib/site";
 
 export function Nav() {
   const pathname = usePathname();
@@ -54,14 +55,18 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-16 max-w-content items-center justify-between px-section-x md:h-20"
       >
-        <Link
-          href="/"
-          className={cn(
-            "font-display text-xl tracking-[-0.01em] transition-colors duration-300 md:text-2xl",
-            onLight ? "text-ink" : "text-bone",
-          )}
-        >
-          {nav.logo}
+        <Link href="/" aria-label={`${nav.logo} home`} className="flex items-center">
+          {/* Full colour logo on the light bar; pure white over the dark hero. */}
+          <img
+            src={asset("/logo/nwd-full.svg")}
+            alt={nav.logo}
+            width={152}
+            height={127}
+            className={cn(
+              "h-10 w-auto transition-[filter] duration-300 md:h-12",
+              !onLight && "[filter:brightness(0)_invert(1)]",
+            )}
+          />
         </Link>
 
         {/* Desktop links */}

@@ -4,6 +4,7 @@ import { GsapProvider } from "@/components/providers/GsapProvider";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { EmblemBadge } from "@/components/layout/EmblemBadge";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -19,6 +20,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <Nav />
           <main id="main-content">{children}</main>
           <Footer />
+          <EmblemBadge />
         </MotionProvider>
       </GsapProvider>
     </LenisProvider>

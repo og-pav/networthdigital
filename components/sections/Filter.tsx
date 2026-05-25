@@ -19,7 +19,7 @@ export function Filter() {
           {filter.items.map((item, i) => (
             <Reveal as="li" key={item} delay={i * 0.06}>
               <span className="group relative inline-block py-3">
-                <span className="text-h1 font-display text-ink-muted transition-colors duration-300 group-hover:text-ink">
+                <span className="text-h1 font-display font-bold text-ink-muted transition-colors duration-300 group-hover:text-ink">
                   {item}
                 </span>
                 <span
@@ -31,7 +31,7 @@ export function Filter() {
           ))}
         </ul>
 
-        <p className="mt-12 text-lead text-ink-soft">{filter.closer}</p>
+        <p className="mt-12 text-lead font-light text-ink-soft">{filter.closer}</p>
       </Container>
     </section>
   );

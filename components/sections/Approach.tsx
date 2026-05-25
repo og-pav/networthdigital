@@ -74,7 +74,7 @@ export function Approach() {
                       id={`step-0${i + 1}`}
                       className="approach-step relative rounded-lg border border-ink/10 bg-bone-warm p-7 shadow-sm md:p-8"
                     >
-                      <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
+                      <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-navy">
                         {step.label}
                       </p>
                       <h3 className="mt-3 text-h3 font-display text-ink">
@@ -86,7 +86,7 @@ export function Approach() {
                       <div className="flex h-12 justify-start pl-8" aria-hidden>
                         <span
                           id={`line-${i}`}
-                          className="approach-line block w-px bg-accent"
+                          className="approach-line block w-px bg-steel"
                           style={{ height: "100%" }}
                         />
                       </div>

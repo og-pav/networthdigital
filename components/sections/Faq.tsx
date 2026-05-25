@@ -36,7 +36,7 @@ export function Faq() {
                     <span className="text-h3 font-display text-ink">{item.q}</span>
                     <span
                       className={cn(
-                        "-m-1.5 shrink-0 rounded-full p-1.5 text-accent transition-[transform,background-color] duration-[220ms] ease-snap group-hover:bg-accent/10",
+                        "-m-1.5 shrink-0 rounded-full p-1.5 text-navy transition-[transform,background-color] duration-[220ms] ease-snap group-hover:bg-navy/10",
                         isOpen && "rotate-45",
                       )}
                       aria-hidden

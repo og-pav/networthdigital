@@ -31,7 +31,7 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-accent text-ink hover:bg-accent-deep hover:text-bone-warm shadow-sm",
   secondary:
-    "bg-ink text-bone hover:bg-ink-soft",
+    "bg-navy text-bone hover:bg-navy-deep",
   ghost:
     "bg-transparent text-ink underline-offset-4 hover:underline px-0",
 };

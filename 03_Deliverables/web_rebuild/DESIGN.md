@@ -18,34 +18,62 @@ Three rules:
 
 ## Colour tokens
 
-The palette is taken from the analysed references (demo1 and demo3). Warm dark base, warm cream surface, one vibrant warm accent. No cool blues, no greys, no gradients except in the hero shader.
+The official Net Worth brand palette (Coolors: `223870-b1870f-508ca4-e5e6e4-414042`).
+Five brand colours plus derived shades for surfaces, state and contrast. Cool navy
+and steel anchor the system, gold is the single action colour, gunmetal carries body
+copy on an alabaster ground.
 
-| Token | Hex | Use |
+### Brand colours (the five)
+
+| Name | Hex | Token | Use case |
+| --- | --- | --- | --- |
+| Twilight Indigo (navy) | `#223870` | `--navy` | The primary brand colour. Eyebrow / mono labels on light, secondary buttons, the emblem badge, diagram accents. High contrast on alabaster (8.9:1). |
+| Dark Goldenrod (gold) | `#B1870F` | `--accent` | The single action colour. Primary CTA fill, the hero emphasis line, key highlights, accents on dark surfaces. |
+| Air Force Blue (steel) | `#508CA4` | `--steel` | Secondary accent. Hero shader, approach connector lines, proof imagery wash, marquee separators. Fills / large / decorative only (fails AA as small text on light). |
+| Alabaster Grey | `#E5E6E4` | `--bone` | Primary page background; text colour on dark surfaces. |
+| Gunmetal | `#414042` | `--ink-soft` | Body copy and secondary text on light (7.8:1 on alabaster). |
+
+### Derived shades (surfaces, state, contrast)
+
+| Token | Hex | Use case |
 | --- | --- | --- |
-| `--ink` | `#0F0E0C` | Body text on light surfaces. Background of the hero and the final CTA. |
-| `--ink-soft` | `#3A3733` | Secondary body text, captions, mono labels. |
-| `--ink-muted` | `#8A857D` | Tertiary text, dividers, scroll cues. |
-| `--bone` | `#F4EFE6` | Primary page background. Warm off-white. |
-| `--bone-soft` | `#EAE3D6` | Section dividers, inactive states. |
-| `--bone-warm` | `#FBF7F0` | Lifted surfaces (cards on the bone background). |
-| `--accent` | `#FF5A36` | Primary accent. Hover lifts, focus rings, the one button that matters most. |
-| `--accent-deep` | `#D9441E` | Pressed state, focus ring on light backgrounds. |
-| `--success` | `#2F8F5C` | Form success only. Used sparingly. |
+| `--ink` | `#1B2240` | Deep navy. Dark-section backgrounds (hero, final CTA, footer, services hover, the "after" column), strongest headings, and the CTA label on gold. Deep enough to clear AA on gold (4.7:1) and to make gold/steel accents readable on dark. |
+| `--ink-muted` | `#5C5C5F` | Tertiary labels, captions, scroll cues (AA on alabaster, 5.3:1). |
+| `--navy-deep` | `#16224A` | Secondary button hover / pressed. |
+| `--accent-deep` | `#8E6B0B` | Gold hover / pressed. |
+| `--steel-deep` | `#3F7488` | Steel hover. |
+| `--bone-soft` | `#D6D7D4` | Dividers, inactive states, marquee strip background. |
+| `--bone-warm` | `#F1F1F0` | Lifted card surfaces above the alabaster background. |
+| `--success` | `#2F8F5C` | Form success only. |
 | `--danger` | `#B23A28` | Form error only. |
 
-CSS variables, defined on `:root`, available everywhere through Tailwind's arbitrary value syntax (`bg-[var(--bone)]`) or a Tailwind theme extension.
+CSS variables on `:root`, mirrored into `tailwind.config.ts` (`bg-navy`, `text-ink-soft`, `border-ink/12`, `bg-steel`, etc.).
 
-Dark sections (hero and final CTA) invert: ink becomes background, bone becomes text. The accent stays the same on both.
+### Contrast rules (WCAG AA minimum)
+
+- Body copy: gunmetal on alabaster (AAA). Headings: deep navy `--ink` (12:1).
+- Small accent text on light uses **navy**, never gold or steel (gold 2.9:1, steel 2.8:1 on alabaster both fail). Gold and steel are reserved for fills, large display and decoration.
+- Dark sections are deep navy (`--ink`), so gold and steel accents on them clear AA (gold 4.7:1, steel 4.5:1).
+- Primary CTA: gold fill with the deep-navy `--ink` label (4.7:1). Focus ring: navy, 2px, 3px offset.
 
 ## Typography
 
-Three families. Display, body, mono. Pulled from Google Fonts via `next/font/google` so they self-host and preload.
+Brand typeface is **Azo Sans** (geometric sans, per the brand identity document).
+Azo Sans is a licensed font, so the build ships **Outfit** (the closest free
+geometric match, full weight range) via `next/font/google`; swap in the licensed
+Azo Sans web fonts to match exactly. A monospace (`Geist Mono`) is kept for
+technical labels and tabular numbers.
 
-| Role | Family | Weights | Notes |
-| --- | --- | --- | --- |
-| Display | `Instrument Serif` | 400 | The editorial moment. Hero headline, section labels, the final CTA line. Italic available for the one sentence that needs it. |
-| Body / UI | `Geist` | 400, 500, 600 | Everything else. Buttons, body copy, nav. |
-| Mono | `Geist Mono` | 400, 500 | Eyebrow labels (`/ 001`, `/ APPROACH`), numbers in the ROI calculator, microcopy. |
+| Role | Brand font | Build font | Weight | Notes |
+| --- | --- | --- | --- | --- |
+| Display | Azo Sans Black | Outfit | 900 | Hero headline, final CTA line. The heaviest geometric moment. |
+| Heading | Azo Sans Bold | Outfit | 700 | Section and card headings. |
+| Sub-display | Azo Sans Light | Outfit | 300 | Section leads and large sub copy. |
+| Body / UI | Azo Sans Regular | Outfit | 400, 500 | Body copy, buttons, nav. |
+| Mono | (n/a) | Geist Mono | 400, 500 | Eyebrow labels (`/ 001`, `/ APPROACH`), ROI numbers, microcopy. |
+
+Emphasis comes from weight and the navy/gold colours, not italics: the geometric
+sans has no italic, so the hero's second line is gold rather than serif italic.
 
 Type scale (mobile first, scale up at `lg`):
 

@@ -11,7 +11,7 @@ function Row({ ariaHidden = false }: { ariaHidden?: boolean }) {
           <span className="font-mono text-eyebrow uppercase tracking-[0.12em] text-ink">
             {tag}
           </span>
-          <span className="mx-6 select-none text-accent md:mx-8" aria-hidden>
+          <span className="mx-6 select-none text-steel md:mx-8" aria-hidden>
             +
           </span>
         </li>

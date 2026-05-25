@@ -111,7 +111,7 @@ export function VsComparison() {
             </div>
           </div>
 
-          <p className="mt-10 text-center font-display text-h3 italic text-ink">
+          <p className="mt-10 text-center font-display text-h3 font-light text-ink">
             {vs.closer}
           </p>
         </Container>

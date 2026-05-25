@@ -9,13 +9,13 @@ export function FinalCta() {
     <section className="flex min-h-[70svh] items-center bg-ink py-section-y text-bone lg:min-h-[100svh]">
       <Container className="flex flex-col items-center text-center">
         <Reveal>
-          <p className="mx-auto max-w-[16ch] font-display text-display italic leading-[1.05] text-bone">
+          <p className="mx-auto max-w-[16ch] font-display text-display font-black leading-[1.0] text-bone">
             {finalCta.sentence}
           </p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-8 max-w-xl text-lead text-bone/70">
+          <p className="mx-auto mt-8 max-w-xl text-lead font-light text-bone/75">
             {finalCta.sub}
           </p>
         </Reveal>

@@ -9,23 +9,26 @@ import { HeroReveal } from "./HeroReveal";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-bone">
+    <section
+      id="top"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-bone"
+    >
       <HeroBackgroundLazy />
 
       <Container className="relative z-10 pt-28 pb-24 md:pt-32">
         <HeroReveal>
-          <Eyebrow className="hero-fade">{hero.eyebrow}</Eyebrow>
+          <Eyebrow className="hero-fade text-accent">{hero.eyebrow}</Eyebrow>
 
-          <h1 className="mt-6 max-w-[16ch] font-display text-display leading-[1.02]">
+          <h1 className="mt-6 max-w-[15ch] font-display text-display font-black leading-[1.0] text-bone">
             <span className="reveal-line block">
               <SplitWords text={hero.headline.line1} />
             </span>
-            <span className="reveal-line block italic">
+            <span className="reveal-line block text-accent">
               <SplitWords text={hero.headline.line2} />
             </span>
           </h1>
 
-          <p className="hero-fade mt-8 max-w-xl text-lead text-bone/70">
+          <p className="hero-fade mt-8 max-w-xl text-lead font-light text-bone/75">
             {hero.sub}
           </p>
 

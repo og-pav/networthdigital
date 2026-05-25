@@ -18,10 +18,10 @@ export function HeroBackgroundLazy() {
     <div className="absolute inset-0 overflow-hidden bg-ink" aria-hidden>
       {/* Static fallback gradient (visible until/instead of WebGL) */}
       <div
-        className="absolute inset-0 opacity-90"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 55% at 50% 58%, rgba(255,90,54,0.22) 0%, rgba(255,90,54,0.06) 38%, rgba(15,14,12,0) 70%), #0F0E0C",
+            "radial-gradient(55% 50% at 65% 40%, rgba(177,135,15,0.20) 0%, rgba(177,135,15,0.04) 40%, rgba(27,34,64,0) 72%), radial-gradient(60% 55% at 26% 70%, rgba(80,140,164,0.40) 0%, rgba(80,140,164,0.07) 45%, rgba(27,34,64,0) 75%), #1B2240",
         }}
       />
       <HeroBackground />

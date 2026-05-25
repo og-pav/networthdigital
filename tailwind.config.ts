@@ -16,25 +16,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: "#0F0E0C",
-          soft: "#3A3733",
-          muted: "#6E6A62",
+        // Net Worth brand palette (see DESIGN.md for full use-case table).
+        // Brand: navy #223870, gold #B1870F, steel #508CA4,
+        // alabaster #E5E6E4, gunmetal #414042. Shades derived for surfaces.
+        navy: {
+          DEFAULT: "#223870", // Twilight Indigo
+          deep: "#16224A",
         },
-        bone: {
-          DEFAULT: "#F4EFE6",
-          soft: "#EAE3D6",
-          warm: "#FBF7F0",
+        steel: {
+          DEFAULT: "#508CA4", // Air Force Blue
+          deep: "#3F7488",
         },
         accent: {
-          DEFAULT: "#FF5A36",
-          deep: "#D9441E",
+          DEFAULT: "#B1870F", // Dark Goldenrod (gold)
+          deep: "#8E6B0B",
+        },
+        ink: {
+          DEFAULT: "#1B2240", // deep navy: dark surfaces + strong text
+          soft: "#414042", // Gunmetal: body
+          muted: "#5C5C5F", // tertiary labels (AA on alabaster)
+        },
+        bone: {
+          DEFAULT: "#E5E6E4", // Alabaster Grey
+          soft: "#D6D7D4",
+          warm: "#F1F1F0",
         },
         success: "#2F8F5C",
         danger: "#B23A28",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-sans)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },

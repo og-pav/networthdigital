@@ -21,7 +21,7 @@ export function Agitator() {
               delay={i * 0.12}
               className="flex flex-col gap-3 bg-bone-warm p-6 transition-colors duration-300 hover:bg-bone-soft md:gap-4 md:p-8"
             >
-              <span className="font-mono text-eyebrow tracking-[0.12em] text-accent">
+              <span className="font-mono text-eyebrow tracking-[0.12em] text-navy">
                 {card.number}
               </span>
               <h3 className="text-h3 font-display text-ink">{card.title}</h3>

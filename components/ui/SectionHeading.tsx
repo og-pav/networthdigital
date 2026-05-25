@@ -14,8 +14,11 @@ export function SectionHeading({
 }) {
   const sizeClass =
     size === "display" ? "text-display" : size === "h2" ? "text-h2" : "text-h1";
+  const weightClass = size === "display" ? "font-black" : "font-bold";
   return (
-    <Tag className={cn("font-display text-ink", sizeClass, className)}>
+    <Tag
+      className={cn("font-display text-ink", sizeClass, weightClass, className)}
+    >
       {children}
     </Tag>
   );

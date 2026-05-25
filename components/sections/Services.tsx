@@ -24,7 +24,7 @@ export function Services() {
               className="group relative block border-b border-ink/12 bg-bone transition-colors duration-300 ease-out hover:bg-ink"
             >
               <div className="mx-auto flex min-h-[200px] max-w-content flex-col justify-center px-section-x py-9 md:min-h-[280px] md:py-12">
-                <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
+                <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-navy transition-colors duration-300 group-hover:text-accent">
                   {service.label}
                 </p>
 
@@ -52,14 +52,14 @@ export function Services() {
                             <Check
                               size={16}
                               strokeWidth={1.5}
-                              className="mt-1 shrink-0 text-accent"
+                              className="mt-1 shrink-0 text-navy transition-colors duration-300 group-hover:text-accent"
                               aria-hidden
                             />
                             <span>{inc}</span>
                           </li>
                         ))}
                       </ul>
-                      <span className="mt-6 inline-block font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
+                      <span className="mt-6 inline-block font-mono text-eyebrow uppercase tracking-[0.12em] text-navy transition-colors duration-300 group-hover:text-accent">
                         {service.cta}
                       </span>
                     </div>

@@ -21,7 +21,7 @@ export function Proof() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(120% 120% at 20% 10%, rgba(255,90,54,0.28) 0%, rgba(15,14,12,0) 55%), repeating-linear-gradient(135deg, rgba(244,239,230,0.04) 0px, rgba(244,239,230,0.04) 1px, transparent 1px, transparent 9px), #0F0E0C",
+                    "radial-gradient(120% 120% at 18% 12%, rgba(177,135,15,0.30) 0%, rgba(27,34,64,0) 55%), radial-gradient(120% 120% at 85% 88%, rgba(80,140,164,0.45) 0%, rgba(27,34,64,0) 55%), repeating-linear-gradient(135deg, rgba(229,230,228,0.05) 0px, rgba(229,230,228,0.05) 1px, transparent 1px, transparent 9px), #1B2240",
                 }}
                 aria-hidden
               />
@@ -37,11 +37,11 @@ export function Proof() {
               <p className="font-mono text-eyebrow uppercase tracking-[0.12em] text-ink-muted">
                 {proof.caseStudy.client}
               </p>
-              <p className="text-h2 font-display text-ink">
+              <p className="text-h2 font-display font-bold text-ink">
                 {proof.caseStudy.result}
               </p>
               <p className="text-body text-ink-soft">{proof.caseStudy.summary}</p>
-              <span className="mt-2 font-mono text-eyebrow uppercase tracking-[0.12em] text-accent">
+              <span className="mt-2 font-mono text-eyebrow uppercase tracking-[0.12em] text-navy">
                 {proof.caseStudy.cta}
               </span>
             </div>

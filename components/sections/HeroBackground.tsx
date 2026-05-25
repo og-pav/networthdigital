@@ -56,11 +56,13 @@ export function HeroBackground() {
           vec2 m = uMouse; m.x *= aspect;
           float d = distance(p, m);
           float wave = 0.5 + 0.5 * sin(uTime * 0.25 + d * 5.0);
-          float n = noise(uv * 3.0 + uTime * 0.03) * 0.06;
-          vec3 ink = vec3(0.058, 0.054, 0.047);
-          vec3 accent = vec3(1.0, 0.352, 0.211);
-          float glow = smoothstep(0.85, 0.0, d) * wave * 0.55;
-          vec3 col = mix(ink, accent * 0.45, glow);
+          float n = noise(uv * 3.0 + uTime * 0.03) * 0.05;
+          vec3 base = vec3(0.106, 0.133, 0.251); // #1B2240 deep navy
+          vec3 steel = vec3(0.314, 0.549, 0.643); // #508CA4 air force blue
+          vec3 gold = vec3(0.694, 0.529, 0.059);  // #B1870F goldenrod
+          float glow = smoothstep(0.9, 0.0, d) * wave * 0.7;
+          vec3 hue = mix(steel, gold, wave);
+          vec3 col = mix(base, hue, glow * 0.55);
           col += n;
           gl_FragColor = vec4(col, 1.0);
         }

@@ -1,17 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Geist_Mono } from "next/font/google";
 import { site, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const display = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const sans = Geist({
+// Outfit is the closest free geometric match to the brand font (Azo Sans):
+// it carries Black (display), Bold (headings), Light (sub-display) and Regular
+// (body) weights. Swap in the licensed Azo Sans web fonts if/when available.
+const sans = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -24,7 +19,7 @@ const mono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0F0E0C",
+  themeColor: "#11142A",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -74,10 +69,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en-AU"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
-    >
+    <html lang="en-AU" className={`${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );
